@@ -9,8 +9,6 @@ example of participation:
     athleteCount: 372
 }
 */
-<<<<<<< Updated upstream
-=======
 export interface Participation {
   id: number;
   year: number;
@@ -18,4 +16,3 @@ export interface Participation {
   medalsCount: number;
   athletesCount: number;
 }
->>>>>>> Stashed changes
