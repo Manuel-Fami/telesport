@@ -7,3 +7,12 @@ example of an olympic country:
     participations: []
 }
 */
+<<<<<<< Updated upstream
+=======
+
+export interface OlympicData {
+  id: number;
+  country: string;
+  participations: [];
+}
+>>>>>>> Stashed changes

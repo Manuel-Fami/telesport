@@ -1,3 +1,17 @@
 <h2>Olympic games app</h2>
 <hr />
+<<<<<<< Updated upstream
 <p>{{ (olympics$ | async)?.length }} data loaded</p>
+=======
+<p>{{ olympicData | json }}</p>
+
+<div *ngIf="olympicData; else loading">
+  <h1>Olympic Data</h1>
+  <div *ngFor="let country of olympicData">
+    <h2>{{ country.country }} - {{ country.id }}</h2>
+  </div>
+</div>
+<ng-template #loading>
+  <p>Loading data...</p>
+</ng-template>
+>>>>>>> Stashed changes

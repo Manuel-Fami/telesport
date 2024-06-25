@@ -9,3 +9,13 @@ example of participation:
     athleteCount: 372
 }
 */
+<<<<<<< Updated upstream
+=======
+export interface Participation {
+  id: number;
+  year: number;
+  city: string;
+  medalsCount: number;
+  athletesCount: number;
+}
+>>>>>>> Stashed changes
