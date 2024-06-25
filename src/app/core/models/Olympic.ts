@@ -7,3 +7,16 @@ example of an olympic country:
     participations: []
 }
 */
+export interface participations {
+  id: number;
+  year: number;
+  city: string;
+  medalsCount: number;
+  athletesCount: number;
+}
+
+export interface OlympicData {
+  id: number;
+  country: string;
+  participations: [];
+}
