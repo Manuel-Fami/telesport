@@ -9,6 +9,7 @@ import { OlympicData } from 'src/app/core/models/Olympic';
 })
 export class HomeComponent implements OnInit {
   olympicData: OlympicData[] | undefined;
+  totalMedalsByCountry: { country: string; totalMedals: number }[] = [];
 
   constructor(private olympicService: OlympicService) {}
 
@@ -17,7 +18,19 @@ export class HomeComponent implements OnInit {
     this.olympicService.getOlympics().subscribe((data) => {
       if (data) {
         this.olympicData = data;
+        this.calculateTotalMedalsByCountry();
       }
     });
+  }
+
+  calculateTotalMedalsByCountry(): void {
+    this.totalMedalsByCountry =
+      this.olympicData?.map((country) => {
+        const totalMedals = country.participations.reduce(
+          (sum, participation) => sum + participation.medalsCount,
+          0
+        );
+        return { country: country.country, totalMedals };
+      }) || [];
   }
 }
