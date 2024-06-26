@@ -1,13 +1,6 @@
-<h2>Olympic games app</h2>
-<hr />
-<p>{{ olympicData | json }}</p>
-
-<div *ngIf="olympicData; else loading">
-  <h1>Olympic Data</h1>
-  <div *ngFor="let country of olympicData">
-    <h2>{{ country.country }} - {{ country.id }}</h2>
-  </div>
-</div>
-<ng-template #loading>
-  <p>Loading data...</p>
-</ng-template>
+<h2>Liste des pays</h2>
+<ul>
+  <li *ngFor="let olympic of olympicData">
+    <a [routerLink]="['/details-country', olympic.id]">{{ olympic.country }}</a>
+  </li>
+</ul>
