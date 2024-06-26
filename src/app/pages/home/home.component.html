@@ -1,4 +1,19 @@
-<h2>Olympic games app</h2>
-<hr />
-<!-- <p>{{ (olympics$ | async)?.length }} data loaded</p> -->
-<p>{{ olympics$ }}</p>
+<h2>Liste des pays</h2>
+<ul>
+  <li *ngFor="let olympic of olympicData">
+    <a [routerLink]="['/details-country', olympic.id]">{{ olympic.country }}</a>
+  </li>
+</ul>
+
+<div *ngIf="olympicData; else loading">
+  <h2>Totals by Country:</h2>
+  <ul>
+    <li *ngFor="let country of totalMedalsByCountry">
+      {{ country.country }}: {{ country.totalMedals }} medals
+    </li>
+  </ul>
+</div>
+<ng-template #loading>
+  <p>Loading data...</p>
+</ng-template>
+

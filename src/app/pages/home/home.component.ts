@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
 import { OlympicService } from 'src/app/core/services/olympic.service';
 import { OlympicData } from 'src/app/core/models/Olympic';
 
@@ -9,12 +8,30 @@ import { OlympicData } from 'src/app/core/models/Olympic';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  public olympics$: Observable<OlympicData | undefined> = of(undefined);
+  olympicData: OlympicData[] | undefined;
+  totalMedalsByCountry: { country: string; totalMedals: number }[] = [];
+
 
   constructor(private olympicService: OlympicService) {}
 
   ngOnInit(): void {
-    this.olympics$ = this.olympicService.getOlympics();
-    console.log(this.olympics$);
+    this.olympicService.loadInitialData().subscribe();
+    this.olympicService.getOlympics().subscribe((data) => {
+      if (data) {
+        this.olympicData = data;
+        this.calculateTotalMedalsByCountry();
+      }
+    });
+  }
+
+  calculateTotalMedalsByCountry(): void {
+    this.totalMedalsByCountry =
+      this.olympicData?.map((country) => {
+        const totalMedals = country.participations.reduce(
+          (sum, participation) => sum + participation.medalsCount,
+          0
+        );
+        return { country: country.country, totalMedals };
+      }) || [];
   }
 }

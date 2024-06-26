@@ -1,1 +1,15 @@
 <p>details-country works!</p>
+
+
+<h2>{{ countryData?.country }}</h2>
+
+<ul>
+  <li *ngFor="let participation of countryData?.participations">
+    <p>Year: {{ participation.year }}</p>
+    <p>City: {{ participation.city }}</p>
+    <p>Medals Count: {{ participation.medalsCount }}</p>
+    <p>Athletes Count: {{ participation.athletesCount }}</p>
+  </li>
+</ul>
+<a routerLink="">Go back</a>
+
