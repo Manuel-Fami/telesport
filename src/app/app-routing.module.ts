@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { DetailsCountryComponent } from './pages/details-country/details-country.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { DetailsCountryComponent } from './pages/details-country/details-country.component';
 
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: '**', // wildcard
     component: NotFoundComponent,
+  },
+  {
+    path: 'test',
+    component: DetailsCountryComponent,
   },
 ];
 

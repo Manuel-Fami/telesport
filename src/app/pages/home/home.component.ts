@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   olympicData: OlympicData[] | undefined;
   totalMedalsByCountry: { country: string; totalMedals: number }[] = [];
 
+
   constructor(private olympicService: OlympicService) {}
 
   ngOnInit(): void {

@@ -14,4 +14,5 @@ export interface OlympicData {
   id: number;
   country: string;
   participations: Participation[];
+
 }
