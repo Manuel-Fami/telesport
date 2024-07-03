@@ -1,18 +1,16 @@
 <h2>Liste des pays</h2>
-<ul>
-  <li *ngFor="let olympic of olympicData">
-    <a [routerLink]="['/details-country', olympic.id]">{{ olympic.country }}</a>
-  </li>
-</ul>
 
-<div *ngIf="olympicData; else loading">
-  <h2>Totals by Country:</h2>
-  <ul>
-    <li *ngFor="let country of totalMedalsByCountry">
-      {{ country.country }}: {{ country.totalMedals }} medals
-    </li>
-  </ul>
+<div class="totals-container">
+  <div class="total-box">
+    <p>Nombre de pays</p>
+    <p>{{ olympicData?.length }}</p>
+  </div>
+
+  <div class="total-box">
+    <p>Nombre de JO</p>
+    <p>{{ countryWithMaxParticipations?.participations }}</p>
+  </div>
 </div>
-<ng-template #loading>
-  <p>Loading data...</p>
-</ng-template>
+<div class="graphic-pie">
+  <canvas id="pieChart">{{ chart }}</canvas>
+</div>

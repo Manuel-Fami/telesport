@@ -14,5 +14,5 @@ export interface Participation {
   year: number;
   city: string;
   medalsCount: number;
-  athletesCount: number;
+  athleteCount: number;
 }
