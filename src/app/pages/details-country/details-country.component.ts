@@ -6,6 +6,7 @@ import { Chart } from 'chart.js/auto';
 import { Subscription } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
 
+
 @Component({
   selector: 'app-details-country',
   templateUrl: './details-country.component.html',
@@ -122,3 +123,4 @@ export class DetailsCountryComponent implements OnInit {
     });
   }
 }
+

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
+ { catchError, tap } from 'rxjs/operators';
 import { OlympicData } from '../models/Olympic';
 
 @Injectable({
