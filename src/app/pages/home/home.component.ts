@@ -75,13 +75,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.chart = new Chart('pieChart', {
       type: 'pie',
       data: {
-        // labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         labels: countryNames,
         datasets: [
           {
             label: 'Nombre de médailles',
             data: medalsCount,
-            // data: [12, 19, 13, 15, 12, 13],
             borderWidth: 1,
           },
         ],
@@ -125,14 +123,4 @@ export class HomeComponent implements OnInit, OnDestroy {
       participations: maxParticipations,
     };
   }
-
-  // calculateTotalParticipations(): void {
-  //   this.totalParticipations =
-  //     this.olympicData?.reduce((country) => {
-  //       // console.log(total);
-  //       // console.log(country.participations.length);
-  //       return country.participations.length;
-  //       // return total + country.participations.length;
-  //     }, 0) || 0;
-  // }
 }

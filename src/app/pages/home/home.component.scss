@@ -32,7 +32,9 @@ canvas {
   width: 100% !important; /* Ensure canvas resizes with its container */
   height: auto !important; /* Maintain aspect ratio */
 }
-
+.graphic-pie canvas:hover {
+  cursor: pointer;
+}
 /* Media queries for further customization */
 @media (max-width: 768px) {
   .total-box {

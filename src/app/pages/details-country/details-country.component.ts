@@ -4,8 +4,6 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
 import { ActivatedRoute } from '@angular/router';
 import { Chart } from 'chart.js/auto';
 import { Subscription } from 'rxjs';
-import { BehaviorSubject } from 'rxjs';
-
 
 @Component({
   selector: 'app-details-country',
@@ -18,38 +16,29 @@ export class DetailsCountryComponent implements OnInit {
   totalParticipations: number = 0;
   totalMedals: number = 0;
   totalAthletes: number = 0;
-  private subscription: Subscription = new Subscription();
-  private olympics$ = new BehaviorSubject<OlympicData[] | undefined>(undefined);
+  countryId: number | undefined;
+  subscription: Subscription = new Subscription();
 
   constructor(
     private route: ActivatedRoute,
     private olympicService: OlympicService
   ) {}
 
-  // ngOnInit(): void {
-  //   const id = Number(this.route.snapshot.paramMap.get('id'));
-  //   this.olympicService.getCountryById(id).subscribe((data) => {
-  //     this.countryData = data;
-  //   });
-  // }
-
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.subscription.add(
-      this.olympicService.getCountryById(id).subscribe((data) => {
-        this.countryData = data;
-      })
-    );
-    this.calculateTotals();
-    this.createLineChart();
-  }
+    this.route.params.subscribe((params) => {
+      this.countryId = +params['id']; // Convertir l'ID en nombre si nécessaire
 
-  // ngOnDestroy(): void {
-  //   this.subscription.unsubscribe();
-  //   if (this.chart) {
-  //     this.chart.destroy();
-  //   }
-  // }
+      // Charger les données du pays en fonction de this.countryId
+      this.subscription.add(
+        this.olympicService.getCountryById(this.countryId).subscribe((data) => {
+          this.countryData = data;
+          // Vous pouvez ajouter d'autres manipulations ou traitements ici si nécessaire
+          this.calculateTotals();
+          this.createLineChart();
+        })
+      );
+    });
+  }
 
   calculateTotals(): void {
     if (!this.countryData) return;
@@ -123,4 +112,3 @@ export class DetailsCountryComponent implements OnInit {
     });
   }
 }
-
