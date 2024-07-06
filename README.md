@@ -39,3 +39,7 @@ Three branches are using for this project
 - Main : Web site production
 - Dev : Web site development
 - Feature : Developpement of news features
+
+# Librairies
+
+This project use chart.js to create graphics : https://www.chartjs.org/
