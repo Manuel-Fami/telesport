@@ -27,3 +27,19 @@ Once mastered, you should continue by creating the typescript interfaces inside 
 You're now ready to implement the requested features.
 
 Good luck!
+
+# Organisation
+
+This project use 2 components : Home and DetailsCountry
+
+# GIT
+
+Three branches are using for this project
+
+- Main : Web site production
+- Dev : Web site development
+- Feature : Developpement of news features
+
+# Librairies
+
+This project use chart.js to create graphics : https://www.chartjs.org/

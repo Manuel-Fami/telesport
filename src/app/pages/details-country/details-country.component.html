@@ -1,15 +1,35 @@
-<p>details-country works!</p>
+<div class="country-name">
+  <h2>{{ countryData?.country }}</h2>
+</div>
 
-
-<h2>{{ countryData?.country }}</h2>
-
-<ul>
+<!-- <ul>
   <li *ngFor="let participation of countryData?.participations">
     <p>Year: {{ participation.year }}</p>
     <p>City: {{ participation.city }}</p>
     <p>Medals Count: {{ participation.medalsCount }}</p>
-    <p>Athletes Count: {{ participation.athletesCount }}</p>
+    <p>Athletes Count: {{ participation.athleteCount }}</p>
   </li>
-</ul>
-<a routerLink="">Go back</a>
+</ul> -->
 
+<div class="totals-container">
+  <div class="total-box">
+    <p>Total des participations</p>
+    <p>{{ totalParticipations }}</p>
+  </div>
+  <div class="total-box">
+    <p>Total des médailles</p>
+    <p>{{ totalMedals }}</p>
+  </div>
+  <div class="total-box">
+    <p>Total des athlètes</p>
+    <p>{{ totalAthletes }}</p>
+  </div>
+</div>
+
+<div class="graphic-line">
+  <canvas id="lineChart"></canvas>
+</div>
+
+<div class="btn-back">
+  <a routerLink="">Revenir à la page d'accueil</a>
+</div>

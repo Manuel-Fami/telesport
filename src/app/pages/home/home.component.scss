@@ -1,0 +1,49 @@
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.totals-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.total-box {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  min-width: 150px; /* Pour uniformiser les tailles des boîtes */
+  white-space: nowrap; /* Empêche le retour à la ligne */
+}
+
+.graphic-pie {
+  width: 100%;
+  max-width: 500px; /* Limit the maximum width */
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+canvas {
+  width: 100% !important; /* Ensure canvas resizes with its container */
+  height: auto !important; /* Maintain aspect ratio */
+}
+.graphic-pie canvas:hover {
+  cursor: pointer;
+}
+/* Media queries for further customization */
+@media (max-width: 768px) {
+  .total-box {
+    min-width: 150px; /* Adjust minimum width on smaller screens */
+  }
+}
+
+@media (max-width: 425px) {
+  .totals-container {
+    flex-direction: column;
+  }
+}
