@@ -32,7 +32,6 @@ export class DetailsCountryComponent implements OnInit {
       this.subscription.add(
         this.olympicService.getCountryById(this.countryId).subscribe((data) => {
           this.countryData = data;
-          // Vous pouvez ajouter d'autres manipulations ou traitements ici si nécessaire
           this.calculateTotals();
           this.createLineChart();
         })
