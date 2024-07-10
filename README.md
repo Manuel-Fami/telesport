@@ -1,6 +1,7 @@
 # OlympicGamesStarter
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+Version nodejs : 20.12.2
 
 Don't forget to install your node_modules before starting (`npm install`).
 
@@ -27,3 +28,21 @@ Once mastered, you should continue by creating the typescript interfaces inside 
 You're now ready to implement the requested features.
 
 Good luck!
+
+# Description
+
+# Organisation
+
+This project use 2 components : Home and DetailsCountry
+
+# GIT
+
+Three branches are using for this project
+
+- Main : Web site production
+- Dev : Web site development
+- Feature : Developpement of news features
+
+# Librairies
+
+This project use chart.js to create graphics : https://www.chartjs.org/

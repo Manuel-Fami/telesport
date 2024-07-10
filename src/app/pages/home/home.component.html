@@ -1,3 +1,20 @@
-<h2>Olympic games app</h2>
-<hr />
-<p>{{ (olympics$ | async)?.length }} data loaded</p>
+<div class="title-container">
+  <div class="title-home">
+    <h2>Liste des pays</h2>
+  </div>
+</div>
+
+<div class="totals-container">
+  <div class="total-box">
+    <p>Nombre de pays</p>
+    <p>{{ olympicData?.length }}</p>
+  </div>
+
+  <div class="total-box">
+    <p>Nombre de JO</p>
+    <p>{{ countryWithMaxParticipations?.participations }}</p>
+  </div>
+</div>
+<div class="graphic-pie">
+  <canvas id="pieChart">{{ chart }}</canvas>
+</div>

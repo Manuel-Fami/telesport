@@ -1,0 +1,28 @@
+<div class="title-country">
+  <div class="country-name">
+    <h2>{{ countryData?.country }}</h2>
+  </div>
+</div>
+
+<div class="totals-container">
+  <div class="total-box">
+    <p>Total des participations</p>
+    <p>{{ totalParticipations }}</p>
+  </div>
+  <div class="total-box">
+    <p>Total des médailles</p>
+    <p>{{ totalMedals }}</p>
+  </div>
+  <div class="total-box">
+    <p>Total des athlètes</p>
+    <p>{{ totalAthletes }}</p>
+  </div>
+</div>
+
+<div class="graphic-line">
+  <canvas id="lineChart"></canvas>
+</div>
+
+<div class="btn-back">
+  <a routerLink="">Revenir à la page d'accueil</a>
+</div>

@@ -1,10 +1,10 @@
-.title-container {
+.title-country {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.title-home {
+.country-name {
   background-color: f0f0f0;
   margin: 10px;
   padding: 0 10px;
@@ -35,7 +35,7 @@ h2 {
   white-space: nowrap; /* Empêche le retour à la ligne */
 }
 
-.graphic-pie {
+.graphic-line {
   width: 100%;
   max-width: 500px; /* Limit the maximum width */
   margin: auto;
@@ -47,23 +47,25 @@ canvas {
   width: 100% !important; /* Ensure canvas resizes with its container */
   height: auto !important; /* Maintain aspect ratio */
 }
-.graphic-pie canvas:hover {
-  cursor: pointer;
-}
-/* Media queries for further customization */
 
-@media (max-width: 425px) {
+.btn-back {
+  width: 200px;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  border-radius: 4px;
+}
+
+a {
+  color: #fff;
+}
+
+.btn-back:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
   .totals-container {
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-  }
-  .total-box {
-    margin: 3px;
-    font-size: 0.9em;
-    height: auto;
-  }
-  h2 {
-    font-size: 1.3em;
   }
 }
