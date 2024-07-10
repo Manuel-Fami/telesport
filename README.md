@@ -31,9 +31,12 @@ Good luck!
 
 # Description
 
+This project is a web site for a sport review. The web site introduces some datas of JO competition with graphics.
+
 # Organisation
 
-This project use 2 components : Home and DetailsCountry
+This project use 2 mains components : Home and DetailsCountry
+And one headerComponent
 
 # GIT
 
