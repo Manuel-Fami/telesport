@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { OlympicData } from 'src/app/core/models/Olympic';
 import { OlympicService } from 'src/app/core/services/olympic.service';
 import { ActivatedRoute } from '@angular/router';
@@ -32,9 +32,8 @@ export class DetailsCountryComponent implements OnInit {
       this.subscription.add(
         this.olympicService.getCountryById(this.countryId).subscribe((data) => {
           this.countryData = data;
-          // Vous pouvez ajouter d'autres manipulations ou traitements ici si nécessaire
           this.calculateTotals();
-          this.createLineChart();
+          this.barChart();
         })
       );
     });
@@ -54,7 +53,7 @@ export class DetailsCountryComponent implements OnInit {
     );
   }
 
-  createLineChart(): void {
+  barChart(): void {
     if (!this.countryData) return;
 
     const labels = this.countryData.participations.map(

@@ -1,0 +1,11 @@
+h1 {
+  display: flex;
+  justify-content: left;
+  font-size: 50px;
+}
+
+@media (max-width: 425px) {
+  h1 {
+    font-size: 40px;
+  }
+}
