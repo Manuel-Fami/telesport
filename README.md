@@ -1,6 +1,7 @@
 # OlympicGamesStarter
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+Version nodejs : 20.12.2
 
 Don't forget to install your node_modules before starting (`npm install`).
 
@@ -27,6 +28,8 @@ Once mastered, you should continue by creating the typescript interfaces inside 
 You're now ready to implement the requested features.
 
 Good luck!
+
+# Description
 
 # Organisation
 
