@@ -22,10 +22,12 @@ export class OlympicService {
     );
   }
 
+  //Tableau d'objets
   getOlympics(): Observable<OlympicData[] | undefined> {
     return this.loadInitialData();
   }
 
+  //Objet seul
   getCountryById(id: number): Observable<OlympicData | undefined> {
     return this.getOlympics().pipe(
       map((olympicData: OlympicData[] | undefined) =>
