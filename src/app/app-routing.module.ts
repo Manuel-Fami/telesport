@@ -17,10 +17,6 @@ const routes: Routes = [
     path: '**', // wildcard
     component: NotFoundComponent,
   },
-  {
-    path: 'test',
-    component: DetailsCountryComponent,
-  },
 ];
 
 @NgModule({

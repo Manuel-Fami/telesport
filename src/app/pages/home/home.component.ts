@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   totalMedalsByCountry: { id: number; country: string; totalMedals: number }[] =
     [];
   chart: Chart<'pie', number[], string> | undefined;
-  totalParticipations: number = 0;
   countryWithMaxParticipations:
     | { country: string; participations: number }
     | undefined;
@@ -58,8 +57,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   findCountryWithMaxParticipations(): void {
+    // Permet de créer un objet qui stock un ensemble de SET, ce qui évite les doublons
     const participationsCount: { [country: string]: Set<number> } = {};
 
+    // Ajoute le nombre de participations par pays
     this.olympicData?.forEach((country) => {
       participationsCount[country.country] = new Set<number>();
       country.participations.forEach((participation) => {
@@ -70,6 +71,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     let maxParticipations = 0;
     let countryWithMaxParticipations = '';
 
+    // Parcours chaque pays et son ensemble de participations
     for (const [country, participations] of Object.entries(
       participationsCount
     )) {
@@ -79,6 +81,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       }
     }
 
+    // Renvoie le pays avec le maximum de participations
     this.countryWithMaxParticipations = {
       country: countryWithMaxParticipations,
       participations: maxParticipations,
