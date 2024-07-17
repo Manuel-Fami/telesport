@@ -82,12 +82,12 @@ export class DetailsCountryComponent implements OnInit {
             borderColor: 'rgba(75, 192, 192, 1)',
             backgroundColor: 'rgba(75, 192, 192, 0.5)',
           },
-          {
-            label: "Nombre d'athlètes",
-            data: athletes,
-            borderColor: 'rgba(153, 102, 255, 1)',
-            backgroundColor: 'rgba(153, 102, 255, 0.5)',
-          },
+          // {
+          //   label: "Nombre d'athlètes",
+          //   data: athletes,
+          //   borderColor: 'rgba(153, 102, 255, 1)',
+          //   backgroundColor: 'rgba(153, 102, 255, 0.5)',
+          // },
         ],
       },
       options: {
